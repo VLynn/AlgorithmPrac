@@ -3,9 +3,9 @@
 int getMajority(int p[], int size);
 
 int main(void) {
-	int testCase[7] = {-2, 5, 7, 7, 9, 7, 7};
-	int majority = getMajority(testCase, 7);
-	printf("The majority is %d\n", majority);
+    int testCase[7] = {-2, 5, 7, 7, 9, 7, 7};
+    int majority = getMajority(testCase, 7);
+    printf("The majority is %d\n", majority);
 }
 
 /*
@@ -17,22 +17,22 @@ int main(void) {
  * 其它算法：hash计数法；排序法，排序后最多数一定是中位数；
  */
 int getMajority(int p[], int size) {
-	if (p == NULL || size < 1) {
-		printf("ERROR, invalid args.");
-		return -1;
-	}
+    if (p == NULL || size < 1) {
+        printf("ERROR, invalid args.");
+        return -1;
+    }
 
-	int candidate, count, i;
-	count = 0;
+    int candidate, count, i;
+    count = 0;
 
-	for (i = 0; i < size; i++) {
-		if (count == 0) 
-			candidate = p[i];
-		if (p[i] == candidate)
-			count++;
-		else
-			count--;
-	}
+    for (i = 0; i < size; i++) {
+        if (count == 0) 
+            candidate = p[i];
+        if (p[i] == candidate)
+            count++;
+        else
+            count--;
+    }
 
-	return candidate;
+    return candidate;
 }
